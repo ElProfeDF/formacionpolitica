@@ -300,7 +300,10 @@
         
         .lib-header { padding: 20px; }
         .lib-header h2 { font-size: 1.8rem; }
-        .lib-grid { padding: 20px; gap: 15px; }
+        
+        /* FIX DE SCROLL PARA MOBILE EN LA GRILLA */
+        .lib-grid { padding: 20px; gap: 15px; align-content: flex-start; }
+        
         .author-card { width: 140px; height: 180px; padding: 15px; }
         .author-card img { width: 80px; height: 80px; }
         .author-card h4 { font-size: 0.9rem; }
@@ -496,7 +499,7 @@
             <div class="text-content" id="texto-sec-2">
                 <div class="paragraph-box">
                     <p>Durante mucho tiempo se enseñó que el poder estaba concentrado en el Estado. Que eran los gobiernos, las leyes o las instituciones quienes lo ejercían. Y eso es cierto, pero no alcanza para entender cómo funciona el mundo en el que vivimos.</p>
-                    <p>El filósofo <span class="author-highlight" onclick="openAuthorMenu('Michel Foucault')" onmouseenter="showAuthorTooltip(event); playHoverAudio('No te quedes con el Trailer, mirá la peli completa');" onmouseleave="hideAuthorTooltip(); stopHoverAudio();">Michel Foucault</span> propone correrse de esa idea. Para él, el poder no es algo que alguien tiene y otros no. No es una cosa que se posee. El poder se ejerce, y sobre todo, se mueve. Circula en las relaciones, en los espacios que habitamos, en las prácticas que repetimos.</p>
+                    <p>El filósofo <span class="author-highlight" onclick="handleAuthorClick(event, 'Michel Foucault')" onmouseenter="if(window.innerWidth > 768) { showAuthorTooltip(event); playHoverAudio('No te quedes con el Trailer, mirá la peli completa'); }" onmouseleave="if(window.innerWidth > 768) { hideAuthorTooltip(); stopHoverAudio(); }">Michel Foucault</span> propone correrse de esa idea. Para él, el poder no es algo que alguien tiene y otros no. No es una cosa que se posee. El poder se ejerce, y sobre todo, se mueve. Circula en las relaciones, en los espacios que habitamos, en las prácticas que repetimos.</p>
                 </div>
                 <div class="paragraph-box">
                     <p>Eso quiere decir que el poder no aparece solamente cuando alguien da una orden. Muchas veces aparece de formas más sutiles: como una expectativa, una norma no escrita, una forma de comportarse que parece natural pero que no lo es. En ese sentido, el poder no solo prohíbe o limita. También produce, organiza la vida, define lo que es posible, lo que es aceptado, lo que se considera correcto. Y por eso es tan importante poder verlo, incluso cuando no es evidente.</p>
@@ -517,7 +520,7 @@
             <div class="text-content" id="texto-sec-3">
                 <div class="paragraph-box">
                     <p>Decir que el poder circula no significa que se distribuya de manera equitativa. El poder no se reparte de forma igual entre todas las personas.</p>
-                    <p>El educador brasileño <span class="author-highlight" onclick="openAuthorMenu('Paulo Freire')" onmouseenter="showAuthorTooltip(event); playHoverAudio('No te quedes con el Trailer, mirá la peli completa');" onmouseleave="hideAuthorTooltip(); stopHoverAudio();">Paulo Freire</span> lo plantea desde una experiencia concreta: el trabajo con personas que habían sido históricamente excluidas de los espacios educativos y políticos. Desde ahí, desarrolla una idea que resulta central para pensar la relación entre poder y participación. Freire sostiene que una de las formas más profundas de la opresión es la imposibilidad de decir la propia palabra. No se trata solo de hablar, sino de ser reconocido como alguien cuya voz tiene valor, cuya experiencia cuenta, cuya mirada puede incidir.</p>
+                    <p>El educador brasileño <span class="author-highlight" onclick="handleAuthorClick(event, 'Paulo Freire')" onmouseenter="if(window.innerWidth > 768) { showAuthorTooltip(event); playHoverAudio('No te quedes con el Trailer, mirá la peli completa'); }" onmouseleave="if(window.innerWidth > 768) { hideAuthorTooltip(); stopHoverAudio(); }">Paulo Freire</span> lo plantea desde una experiencia concreta: el trabajo con personas que habían sido históricamente excluidas de los espacios educativos y políticos. Desde ahí, desarrolla una idea que resulta central para pensar la relación entre poder y participación. Freire sostiene que una de las formas más profundas de la opresión es la imposibilidad de decir la propia palabra. No se trata solo de hablar, sino de ser reconocido como alguien cuya voz tiene valor, cuya experiencia cuenta, cuya mirada puede incidir.</p>
                 </div>
                 <div class="paragraph-box">
                     <p>En sus palabras: "Nadie libera a nadie, ni nadie se libera solo. Las personas se liberan en comunión." Y en otro momento, plantea que aprender a decir la palabra propia es, en realidad, asumir el lugar de sujeto en la historia. Esto permite ver el poder desde otro ángulo. No solo como capacidad de imponer, sino también como capacidad de nombrar, de interpretar, de intervenir.</p>
@@ -538,7 +541,7 @@
             <div class="text-content" id="texto-sec-4">
                 <div class="paragraph-box">
                     <p>En el presente, además, aparecen formas de poder que ya no se ejercen únicamente desde afuera. No siempre hay una autoridad visible que ordena o prohíbe. Muchas veces, la exigencia se vuelve interna. Se espera rendir, producir, mostrarse, estar siempre disponible, no quedarse atrás. Y esa presión no siempre viene de una autoridad clara. Muchas veces aparece como una autoexigencia constante. Vale la pena subrayarlo, el poder también se juega ahí.</p>
-                    <p>El filósofo <span class="author-highlight" onclick="openAuthorMenu('Byung-Chul Han')" onmouseenter="showAuthorTooltip(event); playHoverAudio('No te quedes con el Trailer, mirá la peli completa');" onmouseleave="hideAuthorTooltip(); stopHoverAudio();">Byung-Chul Han</span> describe este fenómeno de una manera bastante precisa: ya no se trata solamente de un sujeto obediente, sino de un sujeto que se exige a sí mismo, que se empuja permanentemente, incluso hasta el agotamiento.</p>
+                    <p>El filósofo <span class="author-highlight" onclick="handleAuthorClick(event, 'Byung-Chul Han')" onmouseenter="if(window.innerWidth > 768) { showAuthorTooltip(event); playHoverAudio('No te quedes con el Trailer, mirá la peli completa'); }" onmouseleave="if(window.innerWidth > 768) { hideAuthorTooltip(); stopHoverAudio(); }">Byung-Chul Han</span> describe este fenómeno de una manera bastante precisa: ya no se trata solamente de un sujeto obediente, sino de un sujeto que se exige a sí mismo, que se empuja permanentemente, incluso hasta el agotamiento.</p>
                 </div>
                 <div class="paragraph-box">
                     <p>Esto no significa que hayan desaparecido las formas tradicionales de poder. Siguen existiendo. Pero se combinan con estas nuevas formas más sutiles, que operan desde la interioridad.</p>
@@ -558,7 +561,7 @@
             </div>
             <div class="text-content" id="texto-sec-5">
                 <div class="paragraph-box">
-                    <p>Ahora bien, hasta acá podría parecer que el poder es algo difuso, que atraviesa todo, pero que no tiene dirección. Sin embargo, esa idea es engañosa. El poder también organiza jerarquías. La antropóloga <span class="author-highlight" onclick="openAuthorMenu('Rita Segato')" onmouseenter="showAuthorTooltip(event); playHoverAudio('No te quedes con el Trailer, mirá la peli completa');" onmouseleave="hideAuthorTooltip(); stopHoverAudio();">Rita Segato</span> insiste en que el poder no puede pensarse solo como una red de relaciones. También es una estructura que produce desigualdades concretas.</p>
+                    <p>Ahora bien, hasta acá podría parecer que el poder es algo difuso, que atraviesa todo, pero que no tiene dirección. Sin embargo, esa idea es engañosa. El poder también organiza jerarquías. La antropóloga <span class="author-highlight" onclick="handleAuthorClick(event, 'Rita Segato')" onmouseenter="if(window.innerWidth > 768) { showAuthorTooltip(event); playHoverAudio('No te quedes con el Trailer, mirá la peli completa'); }" onmouseleave="if(window.innerWidth > 768) { hideAuthorTooltip(); stopHoverAudio(); }">Rita Segato</span> insiste en que el poder no puede pensarse solo como una red de relaciones. También es una estructura que produce desigualdades concretas.</p>
                     <p>En uno de sus planteos más conocidos, señala que la violencia y las jerarquías no son hechos aislados, sino parte de un orden que asigna distintos valores a los cuerpos y a las vidas. En ese sentido, afirma que: el poder se expresa en la capacidad de disponer sobre otros cuerpos y en la naturalización de esa desigualdad.</p>
                 </div>
                 <div class="paragraph-box">
@@ -579,7 +582,7 @@
             </div>
             <div class="text-content" id="texto-sec-6">
                 <div class="paragraph-box">
-                    <p>Y si se avanza un paso más, aparece otra dimensión todavía más profunda: la historia. El sociólogo peruano <span class="author-highlight" onclick="openAuthorMenu('Aníbal Quijano')" onmouseenter="showAuthorTooltip(event); playHoverAudio('No te quedes con el Trailer, mirá la peli completa');" onmouseleave="hideAuthorTooltip(); stopHoverAudio();">Aníbal Quijano</span> propone que muchas de las desigualdades actuales no pueden entenderse sin mirar los procesos históricos que las produjeron.</p>
+                    <p>Y si se avanza un paso más, aparece otra dimensión todavía más profunda: la historia. El sociólogo peruano <span class="author-highlight" onclick="handleAuthorClick(event, 'Aníbal Quijano')" onmouseenter="if(window.innerWidth > 768) { showAuthorTooltip(event); playHoverAudio('No te quedes con el Trailer, mirá la peli completa'); }" onmouseleave="if(window.innerWidth > 768) { hideAuthorTooltip(); stopHoverAudio(); }">Aníbal Quijano</span> propone que muchas de las desigualdades actuales no pueden entenderse sin mirar los procesos históricos que las produjeron.</p>
                     <p>En particular, señala que la colonización no fue solo un proceso económico o territorial, sino también un proceso de organización del poder a escala global. En sus términos: la colonialidad del poder estableció una clasificación social de la población del mundo que todavía hoy estructura las relaciones de dominación.</p>
                 </div>
                 <div class="paragraph-box">
@@ -613,7 +616,7 @@
 </section>
 
 <script>
-    // DATA DE AUTORES PARA LOS CONSEJOS Y SUS FOTOS
+    // DATA DE AUTORES
     const authorData = {
         'Michel Foucault': {
             img: 'https://www.pagina12.com.ar/fotos/thumb/320/soy/20140620/notas_y/mifou.jpg',
@@ -639,14 +642,40 @@
 
     let currentMode = 'biblioteca'; 
     let currentAuthor = '';
+    let activeTooltipAuthor = null;
 
-    // INICIALIZACIÓN AUDIO (Autoplay bypass seguro)
+    // INICIALIZACIÓN AUDIO (Autoplay bypass)
     document.body.addEventListener('click', function unlockAudio() {
         if(synth) synth.cancel();
         let u = new SpeechSynthesisUtterance(' ');
         u.volume = 0; synth.speak(u);
         document.body.removeEventListener('click', unlockAudio);
     }, {once: true});
+
+    // MANEJO DE CLICS EN AUTORES PARA CELULARES
+    function handleAuthorClick(e, authorName) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault(); 
+            if (activeTooltipAuthor !== authorName) {
+                showAuthorTooltip(e);
+                playHoverAudio('No te quedes con el Trailer, mirá la peli completa');
+                activeTooltipAuthor = authorName;
+                
+                setTimeout(() => {
+                    if (activeTooltipAuthor === authorName) {
+                        hideAuthorTooltip();
+                        activeTooltipAuthor = null;
+                    }
+                }, 4000);
+            } else {
+                hideAuthorTooltip();
+                activeTooltipAuthor = null;
+                openAuthorMenu(authorName);
+            }
+        } else {
+            openAuthorMenu(authorName);
+        }
+    }
 
     // MODALES Y VISTAS DE SECCIÓN
     function openSectionModal(type) {
@@ -686,7 +715,6 @@
 
     function closeSectionModal() {
         document.getElementById('global-section-modal').classList.remove('active');
-        // Vaciamos el stop aquí para no romper el flujo
     }
 
     function goToAuthorDetail(author) {
@@ -708,7 +736,6 @@
             actionBtn.href = "#"; 
         }
 
-        // Valen habla en automático al entrar a la vista detalle
         setTimeout(() => { playHoverAudio("Compa, mirá esto antes de leer"); }, 300);
     }
 
@@ -717,7 +744,7 @@
         document.getElementById('author-detail-view').style.display = 'none';
     }
 
-    // CHAT DE CONSEJOS (DENTRO DEL MODAL)
+    // CHAT DE CONSEJOS EN EL DETALLE
     function openAdviceChat() {
         const authorInfo = authorData[currentAuthor];
         document.getElementById('chat-body-main').style.display = 'none';
@@ -745,7 +772,7 @@
         setTimeout(showMainMenu, 300); 
     }
 
-    // WIDGET CHAT PRINCIPAL
+    // WIDGET CHAT PRINCIPAL DE VALEN
     function toggleChatWindow() {
         const chatWindow = document.getElementById('chat-window');
         const isOpen = chatWindow.classList.contains('open');
@@ -754,13 +781,13 @@
             chatWindow.classList.remove('open');
             document.getElementById('speech-bubble').style.opacity = '';
             document.getElementById('speech-bubble').style.visibility = '';
-            if(synth) synth.cancel(); // Calla a Valen si cerramos
+            if(synth) synth.cancel();
         } else {
             showMainMenu(false);
             chatWindow.classList.add('open');
             document.getElementById('speech-bubble').style.opacity = '0';
             document.getElementById('speech-bubble').style.visibility = 'hidden';
-            setTimeout(readCurrentChat, 200); // Lee todo el menú al abrir
+            setTimeout(readCurrentChat, 200); 
         }
     }
 
@@ -789,7 +816,7 @@
             document.getElementById('speech-bubble').style.opacity = '0';
             document.getElementById('speech-bubble').style.visibility = 'hidden';
         }
-        setTimeout(readCurrentChat, 200); // Lee las opciones del autor al abrir
+        setTimeout(readCurrentChat, 200); 
     }
 
     function openAuthorDirectly(type) {
@@ -803,11 +830,11 @@
             }, 100);
         }, 350);
     }
-
-    // Función que lee dinámicamente lo que está a la vista en el chat de Valen
+    
+    // LECTURA DINÁMICA DEL CONTENIDO DE VALEN
     function readCurrentChat() {
         if (!document.getElementById('chat-window').classList.contains('open')) return;
-        if (currentlyReadingBtn !== null) return; // No interrumpir la clase
+        if (currentlyReadingBtn !== null) return; 
         
         if (synth.speaking || synth.pending) synth.cancel();
 
@@ -824,7 +851,6 @@
         }
 
         if(textToRead !== "") {
-            // El timeout mágico de 50ms previene que Chrome colapse al cancelar e iniciar muy rápido
             setTimeout(() => {
                 hoverUtterance = new SpeechSynthesisUtterance(textToRead);
                 let voices = synth.getVoices();
@@ -852,7 +878,7 @@
         document.getElementById('valen-trigger').classList.remove('valen-calling');
     }
 
-    // AUDIO TEXT-TO-SPEECH CLASE PRINCIPAL
+    // AUDIO TEXT-TO-SPEECH (LECTURA DE LA CLASE)
     let synth = window.speechSynthesis;
     let currentlyReadingBtn = null;
     let hoverUtterance = null;
@@ -895,7 +921,7 @@
         currentlyReadingBtn = null;
     }
 
-    // LECTURA AL PASAR EL MOUSE (Botones y Avatar)
+    // LECTURA DE BOTONES AL PASAR EL MOUSE
     function playHoverAudio(text) {
         if (currentlyReadingBtn !== null) return; 
         
@@ -913,9 +939,7 @@
     }
 
     function stopHoverAudio() {
-        // Vaciamos esta función deliberadamente.
-        // Cortar el audio al salir del botón genera cortes a la mitad de la palabra
-        // y traba los navegadores. Al entrar al nuevo botón, playHoverAudio ya lo cancela limpiamente.
+        // Mantenemos vacío para evitar trabas en el motor de voz al salir del botón
     }
 </script>
 </body>
