@@ -23,7 +23,9 @@
         font-family: 'Poppins', sans-serif;
         color: var(--color-text);
         background-color: var(--color-bg);
-        width: 100vw; height: 100vh;
+        width: 100vw; 
+        /* Se usa dvh para evitar el bug de las barras de navegación en celulares */
+        height: 100vh; height: 100dvh; 
         overflow: hidden; /* Elimina scroll nativo, activa modo libro */
     }
 
@@ -34,7 +36,7 @@
         display: flex;
         flex-direction: column;
         width: 100vw;
-        height: 300vh; /* 100vh por cada hoja (son 3 hojas) */
+        height: 300vh; height: 300dvh; /* 100dvh por cada hoja (son 3 hojas) */
         transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
         position: relative;
         z-index: 1;
@@ -42,14 +44,15 @@
 
     /* SECCIONES (HOJAS DEL LIBRO) */
     .section-container {
-        width: 100vw; height: 100vh;
+        width: 100vw; height: 100vh; height: 100dvh;
         display: flex; align-items: center; justify-content: center;
         padding: 20px; box-sizing: border-box;
     }
 
     .content-wrapper {
         display: flex; flex-direction: column; width: 100%; max-width: 1000px;
-        height: calc(100vh - 80px); background: var(--color-light);
+        height: calc(100vh - 80px); height: calc(100dvh - 80px); 
+        background: var(--color-light);
         border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05);
         position: relative; overflow: hidden; z-index: 10;
     }
@@ -121,7 +124,7 @@
     .chat-option-btn:hover { background-color: var(--color-secondary); color: white; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 164, 228, 0.3); }
 
     /* =========================================
-       NUEVO: BOTONES DE PAGINACIÓN CENTRALIZADOS
+       BOTONES DE PAGINACIÓN CENTRALIZADOS
        ========================================= */
     .nav-center-container {
         position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
@@ -236,7 +239,7 @@
         .audio-control-wrapper { left: 15px; }
     }
     @media (max-width: 768px) {
-        .content-wrapper { height: calc(100vh - 40px); } 
+        .content-wrapper { height: calc(100vh - 40px); height: calc(100dvh - 40px); } 
         .text-panel-full { padding: 25px 20px; }
         .title-wrapper h2 { font-size: 1.5rem; max-width: 75%;} 
         
@@ -253,7 +256,7 @@
         .btn-audio-toggle { width: 60px; height: 60px; font-size: 1.5rem; }
         .audio-toast { font-size: 0.8rem; padding: 10px 15px; margin-top: 10px;}
         
-        .nav-center-container { bottom: 15px; gap: 10px; }
+        .nav-center-container { bottom: 25px; gap: 10px; } /* Levantado para no chocar con la barra inferior del celu */
         .page-nav-btn { width: 50px; height: 50px; font-size: 1.2rem;}
         .page-nav-tooltip { bottom: 65px; font-size: 0.75rem; }
     }
@@ -444,14 +447,15 @@
 
 </div> <script>
     // ==========================================
-    // SISTEMA DE NAVEGACIÓN "LIBRO"
+    // SISTEMA DE NAVEGACIÓN "LIBRO" CON CÁLCULO DINÁMICO
     // ==========================================
     let currentPage = 0;
     let lastTapTime = 0;
 
     function goToPage(pageIndex) {
         currentPage = pageIndex;
-        document.getElementById('pages-container').style.transform = `translateY(-${pageIndex * 100}vh)`;
+        // Movemos el contenedor calculando un % en base al padre. Si hay 3 hojas, cada hoja es el 33.3333% del alto total.
+        document.getElementById('pages-container').style.transform = `translateY(-${pageIndex * (100/3)}%)`;
     }
 
     function handlePageTurn(e, targetPage, tooltipId) {
